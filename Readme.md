@@ -28,7 +28,7 @@ Creates a gzip'd tarball in the directory the script is run from.
 As of now the script does <b>not</b> accept any arguments, however you can modify the .sh file itself for customization of variables;<br \>
 I plan to add code allowing for runtime arguments to be used to set the backup source, destination, backup retention (and duration of retention) among other things...<br />
 See the TO-DO file for planned upcoming features;<br />
-Also feel free to submit requests for features or bug fixes at my <a href="https://github.com/cbrightly/backup-script/" target="_blank">github page</a> for this project.
+Also feel free to submit requests for features or bug fixes at my <a href="https://github.com/cbrightly/BackupScript/" target="_blank">github page</a> for this project.
 </p>
 </body>
 </html>
