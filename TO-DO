@@ -14,7 +14,10 @@
       <li>File and folder backup exclusions</li>
       <li>Option to include or exclude WWW_ROOT (included by default)</li>
       <li>Source directory for WWW_ROOT</li>
-    </ul>
+      <li>Compression variable &amp; arg: tgz, bz2, ???
+      <li>Make backup destination external dev, mounted remote FS or SCP host</li>
+</li> 
+   </ul>
   <li>ADD OTHER FEATURES &amp; SQUASH BUGS!</li>
 </ul>
 </p>
