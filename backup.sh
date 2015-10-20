@@ -14,7 +14,7 @@
 # <----- SCRIPT SETTINGS VARIABLES ----->
 # Changing these allows for finer control over script paramaters, however
 # setting these incorrectly can stop the script from executing properly...
-# You should only change these if you are SURE you know what you're doing!
+c# You should only change these if you are SURE you know what you're doing!
 DATE=`date +%F`   	# Grab the date
 HOST=`hostname`	  	# Grab the hostname
 NAME=`whoami` 		# Grab username
@@ -48,7 +48,7 @@ fi
 # If $DESTINATION isn't writable...
 if [ ! -w $DESTINATION ]; then
     DESTINATION=$HOME/backup
-    if [ ! -w $DESTINATION]; then
+    if [ ! -w $DESTINATION ]; then
         echo "Can't write to " $DESTINATION "! Aborting!"
         exit 2
     else
@@ -71,5 +71,5 @@ tar -czf $TARFILE $WEB --exclude $DESTINATION
 
 # All done!
 echo "Successfully created backups of WWW_ROOT and " $SOURCE " inside " $DESTINATION "!"
-echo "Successfully purged pre-existing backup files older than " $RETAIN " days!"
+# echo "Successfully purged pre-existing backup files older than " $RETAIN " days!"
 echo "Backup Script Completed!"

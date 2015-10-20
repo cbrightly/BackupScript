@@ -22,19 +22,37 @@ This allows you to run the script with the following command instead of the abov
 ```
 
 ...and then you are good to go!<br /><br />
-I plan to move contents from my TO-DO file into README.md soon.
+<h2>Human Readable 
+Changelog:</h2> <ul> <li>Removed 
+HTML formatting from README file<br 
+/></li> <li>Added a correctly 
+formatted README.md<br /></li> 
+<li>Initial commit of work on 
+gh-pages branch<br /></li> </ul>
+<br />
+    <ul> <h2>Notes:</h2> <br /> As 
+of now the script does <b>not</b> 
+accept any arguments, however you 
+can modify the .sh file itself for 
+customization of variables;<br /> I 
+plan to add code allowing for 
+runtime arguments to be used to set 
+the backup source, destination, 
+backup retention (and duration of 
+retention) among other things...<br 
+/> Also feel free to submit requests 
+for features or bug fixes at my <a 
+href="https://github.com/cbrightly/BackupScript/" 
+target="_blank">github page</a> for 
+this project.
 
-<h2>Human Readable Changelog:</h2>
+<h2>TODO:</h2>
 <ul>
-<li>Removed HTML formatting from README file<br /></li>
-<li>Added a correctly formatted README.md<br /></li>
-<li>Initial commit of work on gh-pages branch<br /></li>
+      <li>Backup source</li>
+      <li>Backup destination</li>
+      <li>File and folder backup exclusions</li>
+      <li>Option to include or exclude WWW_ROOT (included by default)</li>
+      <li>Source directory for WWW_ROOT</li>
+      <li>Compression variable &amp; arg: tgz, bz2, ???</li>
+      <li>Make backup destination external dev, mounted remote FS or SCP host</li>
 </ul>
-
-<br />
-
-<h2>Notes:</h2>
-<br />
-As of now the script does <b>not</b> accept any arguments, however you can modify the .sh file itself for customization of variables;<br />
-I plan to add code allowing for runtime arguments to be used to set the backup source, destination, backup retention (and duration of retention) among other things...<br />
-Also feel free to submit requests for features or bug fixes at my <a href="https://github.com/cbrightly/BackupScript/" target="_blank">github page</a> for this project.
