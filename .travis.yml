@@ -1,1 +1,2 @@
-sudo: true
+language: bash
+sudo: false
