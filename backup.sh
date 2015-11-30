@@ -14,7 +14,7 @@
 # <----- SCRIPT SETTINGS VARIABLES ----->
 # Changing these allows for finer control over script paramaters, however
 # setting these incorrectly can stop the script from executing properly...
-c# You should only change these if you are SURE you know what you're doing!
+# You should only change these if you are SURE you know what you're doing!
 DATE=`date +%F`   	# Grab the date
 HOST=`hostname`	  	# Grab the hostname
 NAME=`whoami` 		# Grab username
