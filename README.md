@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/cbrightly/BackupScript.svg?branch=master)](https://travis-ci.org/cbrightly/BackupScript)
 Backup Script for BASH: backup.sh
 ====================
 BackupScript is a useful BASH script for backing up a users home directory (if the user is not 'root') or for backing up entire system (if run as 'root' / with root permissions)<br />
