@@ -1,2 +1,5 @@
 language: bash
 sudo: false
+
+after-script:
+  chmod a+x backup.sh
