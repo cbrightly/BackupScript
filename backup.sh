@@ -15,12 +15,12 @@
 # Changing these allows for finer control over script paramaters, however
 # setting these incorrectly can stop the script from executing properly...
 # You should only change these if you are SURE you know what you're doing!
-DATE=`date +%F`   	# Grab the date
-HOST=`hostname`	  	# Grab the hostname
-NAME=`whoami` 		# Grab username
-DESTINATION=/backup 	# Set default destination
-SOURCE=/	  	# Default source for direcrory to backup
-WEB=/var/www	  	# web home
+DATE=`date +%F`		# Grab the date
+HOST=`hostname`		# Grab the hostname
+NAME=`whoami`		# Grab username
+DESTINATION=/backup	# Set default destination
+SOURCE=/		# Default source for direcrory to backup
+WEB=/var/www		# web home
 RETAIN=3		# Time in days to keep pre-existing backup files
 
 # Check user & permissions, set src and dest accordingly
@@ -61,10 +61,10 @@ fi
 cd $DESTINATION
 TARFILE=$NAME-$DATE-$HOST.tgz		# Use variables to create a filename
 echo "Creating main backup in file " $TARFILE "."
-tar -czf $TARFILE $SOURCE --exclude $DESTINATION
+tar -czf $TARFILE $SOURCE --exclude $DESTINATION > /dev/null 2>&1
 TARFILE=$NAME-$DATE-$HOST-www.tgz	# Create backup of $WWW
 echo "Creating web backup in file " $TARFILE "."
-tar -czf $TARFILE $WEB --exclude $DESTINATION
+tar -czf $TARFILE $WEB --exclude $DESTINATION > /dev/null 2>&1
 ## Delete backups more than 3 days old
 # echo "Finding and deleting backup files older than " $RETAIN " days.."
 # find $DESTINATION -name "*.tgz" -type f -mtime +$RETAIN -delete
