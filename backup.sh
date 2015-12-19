@@ -20,12 +20,13 @@ HOST=`hostname`		# Grab the hostname
 NAME=`whoami`		# Grab username
 DESTINATION=/backup	# Set default destination
 SOURCE=/		# Default source for direcrory to backup
+BACKUP_WWW=TRUE		# Backup $WEB as well as default data?
 WEB=/var/www		# web home
 RETAIN=3		# Time in days to keep pre-existing backup files
 
 # Check user & permissions, set src and dest accordingly
 if ! [ $(id -u) = 0 ]; then
-  echo "NOT running using root permissions. Backing up home directory only..."
+  echo "NOT running as root. Attempting backup of home directory only..."
   SOURCE=$HOME
  else
   echo "Running as root user / with root  permissions! Backing up " $SOURCE " to " $DESTINATION "!"
@@ -40,8 +41,19 @@ if [ ! -d $DESTINATION ]; then
 		echo $DESTINATION " created..."
 	else
 	        # Can't create the backup destination either
-		echo "Can't create " $DESTINATION ", aborting!"
-		exit 2
+		echo "Can't create " $DESTINATION "..."
+		if [ -d $HOME/backup ]; then
+			if [ -w $HOME/backup ]; then
+				DESTINATION=$HOME/backup
+				echo "Backup of data being created in " $DESTINATION "."
+			else
+				echo "Cannot write to $HOME/backup, aborting!"
+				return 1
+			fi
+		else
+			echo "No suitable backup destinations. Aborting!"
+			return 1
+		fi
 	fi
 fi
 
@@ -50,7 +62,7 @@ if [ ! -w $DESTINATION ]; then
     DESTINATION=$HOME/backup
     if [ ! -w $DESTINATION ]; then
         echo "Can't write to " $DESTINATION "! Aborting!"
-        exit 2
+        return 1
     else
         # If we CAN write to $DESTINATION
         echo $DESTINATION " verified as writable;"
