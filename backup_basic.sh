@@ -19,7 +19,7 @@ USER=`whoami`;			# Get username
 SRC=/;				# Set SCP src
 DEST=/backup;			# Set SCP dest
 DIR=`pwd`;
-echo "/==============================================\";
+echo "+==============================================+";
 echo "|%%%%    backup.sh: execution begining     %%%%|";
 sudo mkdir -p /backup;
 sudo tar -czf /backup/$DATE-$HOST-homes_backup.tar.gz /home --exclude=/home/$USER/.bitcoin --exclude=/home/$USER/.litecoin --exclude=/home/$USER/backup;
@@ -35,5 +35,5 @@ echo "| + Backed up apt state/packages (apt-clone)   |";
 echo "|%%%%                                      %%%%|";
 echo "|%%%%     backup.sh execution complete     %%%%|";
 echo "|%%%%                                      %%%%|";
-echo "\==============================================/";
+echo "+==============================================+";
 echo "";
