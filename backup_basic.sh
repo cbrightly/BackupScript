@@ -32,6 +32,15 @@ sudo tar -czf $DEST/$DATE-$HOST-www_backup.tar.gz /var/www/;
 echo "| + /var/www made into a tarball in $DEST    |";
 sudo tar -czf $DEST/$DATE-$HOST-etc_backup.tar.gz /etc;
 echo "| + /etc made into a tarball in $DEST        |";
+sudo tar -czf $DEST/$DATE-$HOST-var_lib_dpkg.tar.gz /var/lib/dpkg;
+echo "| + /var/lib/dpkg tarballed in $DEST         |";
+sudo tar -czf $DEST/$DATE-$HOST-apt_extended_states.tar.gz /var/lib/apt/extended_states;
+echo "| + /var/lib/apt/extended_states backed up!  |";
+sudo dpkg --get-selections "*" > $DEST/$DATE-$HOST-dpkg_get-selections.txt;
+tar -czf $DEST/$DATE-$HOST-dpkg_get-selections.tar.gz $DEST/$DATE-$HOST-dpkg_get-selections.txt --remove-files
+echo "| + dpkg --get-selections \"*\" backed up!   |";
+sudo tar -czf $DEST/$DATE-$HOST-pkgstates.tar.gz /var/lib/aptitude/pkgstates;
+echo "| + aptitude package states backed up!       |";
 sudo chown $USER $DEST -R;
 echo "| + Changed ownership of $DEST recursively   |";
 # Backup state of apt packages / settings / etc
