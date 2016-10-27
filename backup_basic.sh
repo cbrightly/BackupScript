@@ -44,9 +44,9 @@ echo "| + aptitude package states backed up!       |";
 sudo chown $USER $DEST -R;
 echo "| + Changed ownership of $DEST recursively   |";
 # Backup state of apt packages / settings / etc
-sudo bash $DIR/clone_packages.sh
+##sudo bash $DIR/clone_packages.sh
 # Move apt-clone backup to backup destination
-mv $DIR/*apt*clone* $DEST
+##mv $DIR/*apt*clone* $DEST
 echo "| + Backed up apt state/packages (apt-clone)   |";
 echo "|%%%%                                      %%%%|";
 echo "|%%%%     backup.sh execution complete     %%%%|";
