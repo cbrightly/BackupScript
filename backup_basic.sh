@@ -18,7 +18,7 @@ HOST=`hostname`;		# Grab the hostname
 USER=`whoami`;			# Get username
 SRC=/;				# Set BACKUP  src
 DEST=/backup;			# Set BACKUP dest
-CHOWNER=nobody:nogroup;
+CHOWNER=$USER:nogroup;
 # Where is script running from?
 DIR=$( cd $(dirname $0) ; pwd -P );
 EXCLUDES="--exclude=/home/$USER/.bitcoin/* --exclude=/home/$USER/.litecoin/* --exclude=/home/$USER/backup/* --exclude=/home/$USER/.zcash/* --exclude=/home/$USER/.zcash-params/*";
