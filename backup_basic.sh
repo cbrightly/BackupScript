@@ -16,7 +16,7 @@
 DATE=$(date +%F);				# Grab the current date
 HOST=$(hostname);				# Grab the hostname
 USER=$(whoami);					# Get current username
-SRC=/;						# Set default BACKUP src
+#SRC=/;						# Set default BACKUP src
 DEST=/backup;					# Set default BACKUP dest
 CHOWNER=$USER:nogroup;				# Set default final owner+group
 DIR=$( cd "$(dirname "$0")" || echo "Couldn't cd to $(dirname "$0")... quitting!" && exit ; pwd -P )	# Where is script running from?
